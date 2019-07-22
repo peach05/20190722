@@ -1,0 +1,36 @@
+<table border="1" width="100%">
+
+    <script>
+        const ROW = 3;
+              //常數只會寫大寫//
+        const START = 2;
+        const COL = 3;
+        //以上是彈性寫法
+
+        for (let k = 0; k < ROW; k++) {
+            document.write("<tr>");
+            for (let j = START; j <= (START+COL); j++) {
+                let newj = j + k * COL;
+
+                let isPink;
+                //宣告
+                if (COL % 2 == 0){
+                    isPink = (newj + k) % 2 == 0;
+                }else{
+                    isPink = newj % 2 == 0;
+                }
+
+
+                document.write("<td bgcolor='" + (isPink?"pink":"yellow") + "'>");
+                for (let i = 1; i <= 9; i++) {
+                    let r = newj * i;
+                    document.write(`${newj} x ${i} = ${r}<br>`);
+                }
+                document.write("</td>")
+            }
+            document.write("</tr>")
+        }
+
+
+    </script>
+</table>
