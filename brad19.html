@@ -6,9 +6,9 @@
     //p[4] = true;
     //document.write(p[1] + "<br>");
     //document.write(p.length);
-    for (let i = 0; i < 100; i++) {
-        let rand = parseInt(Math.random() * 6);
-        p[rand]++;
+    for (let i = 0; i < 1000000; i++) {
+        let rand = parseInt(Math.random() * 9);
+        p[rand>=6?rand-3:rand]++;
 
     }
     for (let i = 0; i < p.length; i++) {

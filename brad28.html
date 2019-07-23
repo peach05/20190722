@@ -1,0 +1,52 @@
+<script>
+function sayYa(){
+    document.write("Ya!" + "<br>");
+}
+
+function sayYaV2(name){
+                //傳遞參數
+    document.write(`Ya! ${name} + <br>`);
+}
+
+function sayYaV3(name1, name2) {
+        document.write(`Ya!${name1}, ${name2}<br>`);
+    }
+    function sayYaV4(names) {
+        if (names instanceof Array) {
+            for (let name of names) {
+                document.write(`Ya!${name}<br>`);
+            }
+        }
+    }
+    function sayYaV5(...names) {
+        for (let name of names) {
+            document.write(`Ya!${name}<br>`);
+        }
+    }
+    function sayYaV6(welcome, ...names) {
+        for (let name of names) {
+            document.write(`${welcome}! ${name}<br>`);
+        }
+    }
+    sayYa();
+    sayYaV2('Peach');
+    sayYaV2();
+    sayYaV3('Peach', 'Peach');
+    document.write("<hr>");
+    sayYaV4(['Bard', 'Peach', 'Peter', 'John', 'Eric']);
+    document.write("<hr>");
+    sayYaV5();
+    document.write("<hr>");
+    sayYaV5('Peach');
+    document.write("<hr>");
+    sayYaV5('Peach', 'Bard', 'Eric');
+    document.write("<hr>");
+    sayYaV6('hello', 'Peach', 'Bard', 'Nancy', 'Eric');
+    document.write("<hr>");
+    let fxy = function (x, y) {
+        return 2 * x + y;
+    };
+    document.write(fxy(10, 3) + "<br>");
+    let newfxy = fxy;
+    document.write(fxy(10, 3) + "<br>");
+</script>

@@ -1,0 +1,31 @@
+<script>
+//噁心版
+//邏輯
+let poker = [];
+for (let i=0; i<52; i++){
+    let rand = parseInt(Math.random()*52); // 0 ~ 51
+
+    //檢查QC機制
+    let isRepeat = false;
+    for (let j = 0; j<i; j ++){
+        if(rand == poker[j]){
+            //就重複了
+            isRepeat = true;
+            break;
+        }
+    }
+
+    if(!isRepeat){
+        poker[i] = rand;
+    }else{
+        i--;
+    }
+
+    poker[i] = rand;
+}
+ //驗算
+for (let i in poker){
+    document.write(poker[i] + "<br>");
+}
+
+</script>
