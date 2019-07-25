@@ -1,0 +1,52 @@
+<script>
+    let bike = new Object();
+    document.write(typeof bike + "<br>");
+    bike.speed = 0;
+    bike.gear = 1;
+    bike.upSpeed = function(){ // 加速功能
+        this.speed = this.speed == 1 ? 1 : this.speed*this.gear*1.2;
+        //本物件
+    }
+    bike.downSpeed= function(){ // 減速功能
+        this.speed = this.speed < 1 ? 0 : this.speed*0.7;
+    }
+    //上面是定義這個物件
+    //下面是使用執行這個物件
+    bike.upSpeed();bike.upSpeed();bike.upSpeed();bike.upSpeed();
+    bike.downSpeed;
+    document.write(bike.speed + "<hr>");
+
+    let bike2 = {
+        speed : 0,
+        gear : 1,
+        upSpeed : function(){
+            this.speed = this.speed < 1 ? 1 : this.speed*this.gear*1.2;
+        },//定義加速功能
+        downSpeed : function(){
+            this.speed = this.speed < 1 ? 0 : this.speed*0.7;
+        }
+    };
+
+    document.write(bike2.speed + "<br>");
+    bike2.upSpeed();bike2.upSpeed();
+    document.write(bike2.speed + "<br>");
+
+    bike2['upSpeed']();
+    document.write(bike2.speed + "<br>");
+
+    let method = 'upSpeed';
+    bike2[method]();
+    document.write(bike2.speed + "<hr>");
+
+    for (let key in bike2){
+        document.write(key + " => " + bike2[key] +  "<br>")
+    }
+
+    document.write("<hr>");
+    for(let key in document){
+        document.write(key + "=>" + document[key] + "<br>")
+    }
+
+
+
+</script>

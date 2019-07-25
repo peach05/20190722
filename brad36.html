@@ -1,0 +1,19 @@
+<script>
+function changeAlign(){
+    let mytext = document.getElementById('mytext');
+    let textAling = document.getElementById('textAling');
+                 //下會視為新的一頁
+    mytext.style['textAlign'] = textAlign.value;
+    // for (let key in mytext.style){
+    //     console.log(key + ":" + mytext.style[key]);
+    // }
+}
+</script>
+
+<div id="mytext" style="text-align: left">Hollo, World</div>
+<hr>
+<select id="textAlign" onchange="changeAlign()">
+<option>Left</option>
+<option>Center</option>
+<option>Right</option>
+</select>
