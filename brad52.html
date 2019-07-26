@@ -1,0 +1,62 @@
+<script>
+        // JS6 指令
+        class Bike {
+            constructor(speed) {
+                document.write("Bike()<br>");
+                this.speed = speed;
+                this.name = 'Peach';
+            }
+            upSpeed() {
+                document.write("Bike:upSpeed()<br>");
+            }
+            static m1() {
+                document.write("Bike:m1()<br>");
+            }
+        }
+        class Scooter extends Bike {
+            constructor(speed, gear) {
+                document.write("Scooter()<br>")
+                super(speed);
+                this.speed = speed;
+                this.gear = gear;
+            }
+            chGear(gear) {
+                document.write("Scooter:chGear()<br>");
+                this.gear = gear;
+            }
+            upSpeed() {
+                super.upSpeed();
+                document.write("Scooter:upGear()<br>");
+            }
+        }
+        class Peach {
+            constructor(...x) {
+                document.write("Peach()<br>");
+            }
+        }
+        let b1 = new Bike(123);
+        b1.upSpeed();
+        document.write("<hr>")
+        document.write(b1.speed + "<br>");
+        document.write(b1.name);
+        let s1 = new Scooter(456);
+        s1.upSpeed();
+        s1.chGear(4);
+        document.write("<hr>")
+        document.write(s1.speed + "<br>");
+        document.write(s1.name + "<br>");
+        document.write(b1 instanceof Bike);
+        document.write("<br>");
+        document.write(s1 instanceof Bike);
+        document.write("<br>");
+        document.write(b1 instanceof Scooter);
+        document.write("<br>");
+        document.write(s1 instanceof Scooter);
+        document.write("<br>");
+        let Peach1 = new Peach();
+        let Peach2 = new Peach(2);
+        let Peache3 = new Peach(1, 2, 3);
+        //Math.random
+        Bike.m1();
+        Scooter.m1();
+    </script>

@@ -1,0 +1,33 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<h1 id="test1">Peachhhhhhhhhhhhh</h1>
+<div id="container">
+<h1> I am Peach</h1>
+<p>P1</p>
+<hr>
+<h2>I am bin</h2>
+<p>P2</p>
+</div>
+<hr>
+<input type="button" value="OK" id="test2">
+<script>
+    //$('div') => all div element
+    //$('#id') => id = 'id' =>getElementById('id')
+    //$('group') => class='class' => getElementByClassName('group')
+$('#test2').click(function(){
+    // console.log('OK');
+    $(this).css('color','blue').css('background-color','red');
+
+    let ps = $('p');
+    for(let p of ps){
+        p.style.color = 'blue';
+        p.style.background = 'yellow';
+    }
+
+    $obj = $(document.getElementById('container'));
+    $obj.css('background-color','pink');
+
+    $(test2).attr('disabled', true);
+    $(test2).val('XX');
+});
+</script>
